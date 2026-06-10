@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicines - N-Medix</title>
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <!-- Announcement Bar -->
+    <div style="background-color: var(--primary); color: white; padding: 0.75rem 0; text-align: center; font-size: 0.875rem;">
+        <p>🚚 Free delivery on orders above ₦5,000 | 💳 Safe & Secure Payment | 📱 24/7 Customer Support</p>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container-custom py-4">
+            <div class="flex items-center justify-between gap-4 lg:gap-8">
+                <a href="index.html" class="logo">
+                    <img src="img/logo.png" alt="N-Medix" style="height: 3rem;">
+                </a>
+
+                <form class="search-form hidden-mobile" data-search-form style="max-width: 48rem;">
+                    <select class="search-category" name="category">
+            <option value="All">All</option>
+            <option value="Medicines">Medicines</option>
+            <option value="Lab Tests">Lab Tests</option>
+          </select>
+                    <input type="text" class="search-input" name="q" placeholder="Search for medicines, lab tests, or brands...">
+                    <button type="submit" class="search-btn">🔍</button>
+                </form>
+
+                <div class="flex items-center gap-4 sm:gap-6">
+                    <div class="account-dropdown hidden-mobile" data-dropdown>
+                        <button data-dropdown-trigger class="flex items-center gap-2 cursor-pointer">
+              <div class="account-avatar">👤</div>
+              <div class="xl:block hidden">
+                <p style="font-size: 0.75rem; color: var(--text-muted);">Hello, Sign in</p>
+                <p style="font-size: 0.875rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 0.25rem;">
+                  Account ▼
+                </p>
+              </div>
+            </button>
+                        <div class="dropdown-menu hidden" data-dropdown-menu>
+                            <a href="account.html" style="border-bottom: 1px solid var(--border);">Login / Register</a>
+                            <a href="account.html">My Orders</a>
+                            <a href="account.html">My Wishlist</a>
+                        </div>
+                    </div>
+
+                    <button style="background: none; border: none; cursor: pointer; font-size: 1.25rem; position: relative;">
+            🔔
+            <span style="position: absolute; top: -5px; right: -5px; background-color: #EF4444; color: white; width: 1.25rem; height: 1.25rem; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700;">2</span>
+          </button>
+
+                    <a href="cart.html" class="cart-badge" style="text-decoration: none; font-size: 1.25rem; position: relative;">
+            🛒
+            <span class="cart-count" style="display: none;">0</span>
+          </a>
+
+                    <button class="mobile-menu-toggle">☰</button>
+                </div>
+            </div>
+        </div>
+
+        <nav style="border-top: 1px solid var(--border); display: none;" class="hidden-mobile">
+            <div class="container-custom">
+                <ul style="list-style: none; display: flex; gap: 2rem; padding: 1rem 0;">
+                    <li><a href="index.html" style="text-decoration: none; color: var(--text-main); font-weight: 500;">Home</a></li>
+                    <li><a href="medicines.html" style="text-decoration: none; color: var(--text-main); font-weight: 500;">Medicines</a></li>
+                    <li><a href="lab-tests.html" style="text-decoration: none; color: var(--text-main); font-weight: 500;">Lab Tests</a></li>
+                    <li><a href="medicines.html?deals=true" style="text-decoration: none; color: #EF4444; font-weight: 700;">🔥 Flash Deals</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="mobile-menu" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: white; z-index: 1000; display: none; flex-direction: column; padding-top: 5rem;">
+        <button class="mobile-menu-close" style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; cursor: pointer; font-size: 1.5rem;">✕</button>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; padding: 2rem;">
+            <li><a href="index.html" style="text-decoration: none; color: var(--text-main); font-weight: 500;">Home</a></li>
+            <li><a href="medicines.html" style="text-decoration: none; color: var(--text-main); font-weight: 500;">Medicines</a></li>
+            <li><a href="lab-tests.html" style="text-decoration: none; color: var(--text-main); font-weight: 500;">Lab Tests</a></li>
+            <li><a href="medicines.html?deals=true" style="text-decoration: none; color: #EF4444; font-weight: 700;">🔥 Flash Deals</a></li>
+            <li><a href="account.html" style="text-decoration: none; color: var(--text-main); font-weight: 500;">Account</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main style="background-color: var(--surface); min-height: 100vh; padding: 2rem 0;">
+        <div class="container-custom">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>▸</span>
+                <span class="current">Medicines</span>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 350px; gap: 2rem;">
+                <!-- Main Content Area -->
+                <div>
+                    <!-- View Toggle & Sorting -->
+                    <div style="display: flex; items-center; justify-between; background-color: white; padding: 1rem; border-radius: 0.75rem; margin-bottom: 2rem; border: 1px solid var(--border);">
+                        <div style="display: flex; items-center; gap: 1rem;">
+                            <button data-view-grid style="background: none; border: none; cursor: pointer; font-size: 1.25rem;" title="Grid view">⊞</button>
+                            <button data-view-list style="background: none; border: none; cursor: pointer; font-size: 1.25rem; opacity: 0.5;" title="List view">≡</button>
+                        </div>
+                        <div>
+                            <select style="padding: 0.5rem 1rem; border: 1px solid var(--border); border-radius: 0.5rem; background-color: white;">
+                <option>Sort by: Popularity</option>
+                <option>Price: Low to High</option>
+                <option>Price: High to Low</option>
+                <option>Top Rated</option>
+                <option>Newest</option>
+              </select>
+                        </div>
+                    </div>
+
+                    <!-- Products Grid -->
+                    <div class="products-grid" data-products-container>
+                        <div class="card product-card" data-product-card data-category="Pain Relief" data-brand="Emzor" data-price="1200" data-stock="5">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=400&h=400" alt="Paracetamol 500mg">
+                                <span class="product-badge">-20%</span>
+                                <button class="product-wishlist">🤍</button>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">Pain Relief</span>
+                                <a href="medicine-detail.html?id=m1" class="product-name" style="text-decoration: none;">Paracetamol 500mg x20</a>
+                                <div class="product-rating">
+                                    <span class="star">★★★★★</span>
+                                    <span class="review-count">(128)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="product-price-current">₦1,200</span>
+                                    <span class="product-price-original">₦1,500</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn-primary" data-add-to-cart="m1" style="flex: 1; font-size: 0.875rem;">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card product-card" data-product-card data-category="Vitamins" data-brand="Reload" data-price="2800" data-stock="120">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1550572017-edd951aa8f72?auto=format&fit=crop&q=80&w=400&h=400" alt="Vitamin C">
+                                <span class="product-badge">-20%</span>
+                                <button class="product-wishlist">🤍</button>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">Vitamins</span>
+                                <a href="medicine-detail.html?id=m2" class="product-name" style="text-decoration: none;">Vitamin C 1000mg Effervescent</a>
+                                <div class="product-rating">
+                                    <span class="star">★★★★☆</span>
+                                    <span class="review-count">(84)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="product-price-current">₦2,800</span>
+                                    <span class="product-price-original">₦3,500</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn-primary" data-add-to-cart="m2" style="flex: 1; font-size: 0.875rem;">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card product-card" data-product-card data-category="Malaria" data-brand="Lonart" data-price="2500" data-stock="45">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&q=80&w=400&h=400" alt="Artemether">
+                                <button class="product-wishlist">🤍</button>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">Malaria</span>
+                                <a href="medicine-detail.html?id=m3" class="product-name" style="text-decoration: none;">Artemether Lumefantrine 80/480</a>
+                                <div class="product-rating">
+                                    <span class="star">★★★★★</span>
+                                    <span class="review-count">(210)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="product-price-current">₦2,500</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn-primary" data-add-to-cart="m3" style="flex: 1; font-size: 0.875rem;">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card product-card" data-product-card data-category="Antibiotics" data-brand="GSK" data-price="1500" data-stock="0">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80&w=400&h=400" alt="Amoxicillin">
+                                <span class="product-badge stock-out">Out of Stock</span>
+                                <button class="product-wishlist">🤍</button>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">Antibiotics</span>
+                                <a href="medicine-detail.html?id=m4" class="product-name" style="text-decoration: none;">Amoxicillin 500mg Capsules</a>
+                                <div class="product-rating">
+                                    <span class="star">★★★★☆</span>
+                                    <span class="review-count">(92)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="product-price-current">₦1,500</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn-primary" disabled style="flex: 1; opacity: 0.5; font-size: 0.875rem;">Unavailable</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card product-card" data-product-card data-category="Hypertension" data-brand="Pfizer" data-price="4200" data-stock="30">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&q=80&w=400&h=400" alt="Amlodipine">
+                                <button class="product-wishlist">🤍</button>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">Hypertension</span>
+                                <a href="medicine-detail.html?id=m5" class="product-name" style="text-decoration: none;">Amlodipine 5mg Tablets</a>
+                                <div class="product-rating">
+                                    <span class="star">★★★★☆</span>
+                                    <span class="review-count">(156)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="product-price-current">₦4,200</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn-primary" data-add-to-cart="m5" style="flex: 1; font-size: 0.875rem;">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card product-card" data-product-card data-category="Diabetes" data-brand="Merck" data-price="2700" data-stock="85">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=400&h=400" alt="Metformin">
+                                <span class="product-badge">-10%</span>
+                                <button class="product-wishlist">🤍</button>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">Diabetes</span>
+                                <a href="medicine-detail.html?id=m6" class="product-name" style="text-decoration: none;">Metformin 500mg Tablets</a>
+                                <div class="product-rating">
+                                    <span class="star">★★★★★</span>
+                                    <span class="review-count">(112)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="product-price-current">₦2,700</span>
+                                    <span class="product-price-original">₦3,000</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn-primary" data-add-to-cart="m6" style="flex: 1; font-size: 0.875rem;">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card product-card" data-product-card data-category="Pregnancy" data-brand="Vitabiotics" data-price="11500" data-stock="15">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1550572017-edd951aa8f72?auto=format&fit=crop&q=80&w=400&h=400" alt="Pregnacare">
+                                <span class="product-badge">-8%</span>
+                                <button class="product-wishlist">🤍</button>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">Pregnancy</span>
+                                <a href="medicine-detail.html?id=m7" class="product-name" style="text-decoration: none;">Pregnacare Plus Omega 3</a>
+                                <div class="product-rating">
+                                    <span class="star">★★★★★</span>
+                                    <span class="review-count">(340)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="product-price-current">₦11,500</span>
+                                    <span class="product-price-original">₦12,500</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn-primary" data-add-to-cart="m7" style="flex: 1; font-size: 0.875rem;">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card product-card" data-product-card data-category="Pain Relief" data-brand="Nurofen" data-price="800" data-stock="200">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&q=80&w=400&h=400" alt="Ibuprofen">
+                                <button class="product-wishlist">🤍</button>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">Pain Relief</span>
+                                <a href="medicine-detail.html?id=m8" class="product-name" style="text-decoration: none;">Ibuprofen 400mg x10</a>
+                                <div class="product-rating">
+                                    <span class="star">★★★★☆</span>
+                                    <span class="review-count">(67)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="product-price-current">₦800</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn-primary" data-add-to-cart="m8" style="flex: 1; font-size: 0.875rem;">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <a href="#">← Previous</a>
+                        <span class="active">1</span>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">Next →</a>
+                    </div>
+                </div>
+
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar hidden-mobile">
+                    <h3 style="font-weight: 700; color: var(--text-main); margin-bottom: 1.5rem; font-size: 1.125rem;">Filters</h3>
+
+                    <!-- Price Filter -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Price Range</h4>
+                        <div class="filter-range">
+                            <input type="range" min="0" max="50000" value="50000" data-price-range style="width: 100%;">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted);">
+                                <span>₦0</span>
+                                <span>₦50,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category Filter -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Category</h4>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-pain" data-filter-category value="Pain Relief">
+                            <label for="cat-pain">Pain Relief</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-antibiotics" data-filter-category value="Antibiotics">
+                            <label for="cat-antibiotics">Antibiotics</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-vitamins" data-filter-category value="Vitamins">
+                            <label for="cat-vitamins">Vitamins</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-diabetes" data-filter-category value="Diabetes">
+                            <label for="cat-diabetes">Diabetes</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="cat-malaria" data-filter-category value="Malaria">
+                            <label for="cat-malaria">Malaria</label>
+                        </div>
+                    </div>
+
+                    <!-- Brand Filter -->
+                    <div class="filter-group">
+                        <h4 class="filter-title">Brand</h4>
+                        <div class="filter-option">
+                            <input type="checkbox" id="brand-emzor" data-filter-brand value="Emzor">
+                            <label for="brand-emzor">Emzor</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="brand-reload" data-filter-brand value="Reload">
+                            <label for="brand-reload">Reload</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="brand-lonart" data-filter-brand value="Lonart">
+                            <label for="brand-lonart">Lonart</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="brand-gsk" data-filter-brand value="GSK">
+                            <label for="brand-gsk">GSK</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="brand-pfizer" data-filter-brand value="Pfizer">
+                            <label for="brand-pfizer">Pfizer</label>
+                        </div>
+                    </div>
+
+                    <!-- Stock Filter -->
+                    <div class="filter-group" style="border-bottom: none;">
+                        <h4 class="filter-title">Stock Status</h4>
+                        <div class="filter-option">
+                            <input type="checkbox" id="stock-only" data-filter-stock>
+                            <label for="stock-only">In Stock Only</label>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container-custom">
+            <div class="footer-content">
+                <div>
+                    <a href="index.html" class="logo" style="color: white;">
+                        <span style="font-size: 1.5rem;">N-Medix</span>
+                    </a>
+                    <p>Your Health. Our Priority.</p>
+                    <p style="font-size: 0.75rem; color: rgba(255,255,255,0.6);">Operated under Northern Holdings Nig. Ltd.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">𝕏</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">in</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="medicines.html">Medicines</a></li>
+                        <li><a href="lab-tests.html">Lab Tests</a></li>
+                        <li><a href="medicines.html?deals=true">Deals</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#shipping">Shipping Info</a></li>
+                        <li><a href="#returns">Returns</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms & Conditions</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>📧 support@nmedix.com</li>
+                        <li>📞 +234 (0) 700 NMEDIX</li>
+                        <li>📍 Lagos, Nigeria</li>
+                        <li>🕐 24/7 Available</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 N-Medix. All rights reserved. | Your trusted online pharmacy & lab test platform</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

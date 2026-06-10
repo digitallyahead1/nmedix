@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - N-Medix</title>
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container-custom py-4">
+            <div class="flex items-center justify-between gap-4">
+                <a href="index.html" class="logo">
+                    <img src="img/logo.png" alt="N-Medix" style="height: 3rem;">
+                </a>
+                <div style="text-align: right;">
+                    <p style="font-weight: 600;">Admin Panel</p>
+                    <a href="index.html" style="font-size: 0.875rem; color: var(--secondary); text-decoration: none;">Back to Store</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding: 2rem 0; min-height: 100vh; background-color: var(--surface);">
+        <div class="container-custom">
+            <h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem; color: var(--primary);">Admin Dashboard</h1>
+
+            <!-- Stats -->
+            <div class="products-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-bottom: 3rem;">
+                <div class="card" style="padding: 1.5rem;">
+                    <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.5rem;">Total Orders</p>
+                    <p style="font-size: 2rem; font-weight: 700; color: var(--primary);">342</p>
+                    <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">↑ 12% from last month</p>
+                </div>
+
+                <div class="card" style="padding: 1.5rem;">
+                    <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.5rem;">Revenue</p>
+                    <p style="font-size: 2rem; font-weight: 700; color: var(--secondary);">₦1.2M</p>
+                    <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">↑ 8% from last month</p>
+                </div>
+
+                <div class="card" style="padding: 1.5rem;">
+                    <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.5rem;">Products</p>
+                    <p style="font-size: 2rem; font-weight: 700; color: var(--primary);">8</p>
+                    <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">Active listings</p>
+                </div>
+
+                <div class="card" style="padding: 1.5rem;">
+                    <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.5rem;">Customers</p>
+                    <p style="font-size: 2rem; font-weight: 700; color: var(--primary);">1,284</p>
+                    <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">↑ 24% from last month</p>
+                </div>
+            </div>
+
+            <!-- Management Sections -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <!-- Products Management -->
+                <div class="card" style="padding: 1.5rem;">
+                    <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">📦 Products</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">Manage your product catalog</p>
+                    <a href="#" class="btn-primary" style="width: 100%; text-align: center; text-decoration: none;">Manage Products</a>
+                </div>
+
+                <!-- Orders Management -->
+                <div class="card" style="padding: 1.5rem;">
+                    <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">📋 Orders</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">View and manage customer orders</p>
+                    <a href="#" class="btn-primary" style="width: 100%; text-align: center; text-decoration: none;">View Orders</a>
+                </div>
+
+                <!-- Customers Management -->
+                <div class="card" style="padding: 1.5rem;">
+                    <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">👥 Customers</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">Manage customer accounts and data</p>
+                    <a href="#" class="btn-primary" style="width: 100%; text-align: center; text-decoration: none;">Manage Customers</a>
+                </div>
+
+                <!-- Lab Tests Management -->
+                <div class="card" style="padding: 1.5rem;">
+                    <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">🧬 Lab Tests</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">Manage available lab tests</p>
+                    <a href="#" class="btn-primary" style="width: 100%; text-align: center; text-decoration: none;">Manage Tests</a>
+                </div>
+
+                <!-- Reports -->
+                <div class="card" style="padding: 1.5rem;">
+                    <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">📊 Reports</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">View analytics and reports</p>
+                    <a href="#" class="btn-primary" style="width: 100%; text-align: center; text-decoration: none;">View Reports</a>
+                </div>
+
+                <!-- Settings -->
+                <div class="card" style="padding: 1.5rem;">
+                    <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">⚙️ Settings</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1rem;">Manage store settings</p>
+                    <a href="#" class="btn-primary" style="width: 100%; text-align: center; text-decoration: none;">Store Settings</a>
+                </div>
+            </div>
+
+            <!-- Recent Orders Table -->
+            <div class="card" style="padding: 1.5rem; margin-top: 3rem;">
+                <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem;">Recent Orders</h2>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr style="border-bottom: 2px solid var(--border); background-color: var(--surface);">
+                            <th style="text-align: left; padding: 1rem; font-weight: 600;">Order ID</th>
+                            <th style="text-align: left; padding: 1rem; font-weight: 600;">Customer</th>
+                            <th style="text-align: left; padding: 1rem; font-weight: 600;">Amount</th>
+                            <th style="text-align: left; padding: 1rem; font-weight: 600;">Status</th>
+                            <th style="text-align: left; padding: 1rem; font-weight: 600;">Date</th>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 1rem;">ORD-001</td>
+                            <td style="padding: 1rem;">John Doe</td>
+                            <td style="padding: 1rem;">₦9,877</td>
+                            <td style="padding: 1rem;"><span style="background-color: #DBEAFE; color: #0369a1; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600;">Processing</span></td>
+                            <td style="padding: 1rem;">Oct 23, 2024</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 1rem;">ORD-002</td>
+                            <td style="padding: 1rem;">Jane Smith</td>
+                            <td style="padding: 1rem;">₦5,500</td>
+                            <td style="padding: 1rem;"><span style="background-color: #DCFCE7; color: #166534; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600;">Delivered</span></td>
+                            <td style="padding: 1rem;">Oct 22, 2024</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 1rem;">ORD-003</td>
+                            <td style="padding: 1rem;">Mike Johnson</td>
+                            <td style="padding: 1rem;">₦12,300</td>
+                            <td style="padding: 1rem;"><span style="background-color: #FEF3C7; color: #92400e; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600;">Shipped</span></td>
+                            <td style="padding: 1rem;">Oct 21, 2024</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Note -->
+            <div style="background-color: #FEF3C7; border: 1px solid #FCD34D; border-radius: 0.75rem; padding: 1.5rem; margin-top: 2rem;">
+                <p style="color: #92400e; font-weight: 600; margin-bottom: 0.5rem;">⚠️ Demo Admin Panel</p>
+                <p style="color: #92400e; font-size: 0.875rem;">This is a static demonstration of the admin dashboard. To make it fully functional, you would need to:</p>
+                <ul style="list-style: none; margin-top: 1rem; display: grid; gap: 0.5rem; font-size: 0.875rem; color: #92400e;">
+                    <li>✓ Add backend API integration</li>
+                    <li>✓ Implement database for real data</li>
+                    <li>✓ Add admin authentication</li>
+                    <li>✓ Connect to actual order system</li>
+                    <li>✓ Set up real-time notifications</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container-custom">
+            <div class="footer-content">
+                <div>
+                    <a href="index.html" class="logo" style="color: white;">N-Medix</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 N-Medix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

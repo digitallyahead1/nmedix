@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - N-Medix</title>
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <!-- Announcement Bar -->
+    <div style="background-color: var(--primary); color: white; padding: 0.75rem 0; text-align: center; font-size: 0.875rem;">
+        <p>🚚 Your order is being processed | 📞 Contact support if you have questions</p>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container-custom py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="logo">
+                    <img src="img/logo.png" alt="N-Medix" style="height: 3rem;">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main style="padding: 3rem 0; min-height: 100vh; background-color: var(--surface);">
+        <div class="container-custom" style="max-width: 600px;">
+            <!-- Success Message -->
+            <div style="background-color: white; border-radius: 0.75rem; padding: 2rem; text-align: center; border: 1px solid var(--border);">
+                <div style="font-size: 4rem; margin-bottom: 1rem;">✓</div>
+                <h1 style="font-size: 1.75rem; color: var(--secondary); margin-bottom: 0.5rem;">Order Confirmed!</h1>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">Thank you for your purchase. Your order has been successfully placed.</p>
+
+                <!-- Order Details -->
+                <div style="background-color: var(--surface); padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem; text-align: left;">
+                    <h3 style="font-weight: 700; margin-bottom: 1rem;">Order Details</h3>
+                    <div style="display: grid; gap: 0.75rem;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: var(--text-muted);">Order ID:</span>
+                            <span style="font-weight: 600;">ORD-2024-001234</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: var(--text-muted);">Order Date:</span>
+                            <span style="font-weight: 600;">Oct 23, 2024</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: var(--text-muted);">Estimated Delivery:</span>
+                            <span style="font-weight: 600;">Oct 25, 2024</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span style="color: var(--text-muted);">Total Amount:</span>
+                            <span style="font-weight: 600; color: var(--primary); font-size: 1.125rem;">₦9,877</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- What's Next -->
+                <div style="text-align: left; margin-bottom: 2rem;">
+                    <h3 style="font-weight: 700; margin-bottom: 1rem;">What's Next?</h3>
+                    <ol style="list-style: none; counter-reset: step; display: grid; gap: 1rem;">
+                        <li style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <span style="background-color: var(--primary); color: white; width: 2rem; height: 2rem; border-radius: 9999px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</span>
+                            <div style="text-align: left;">
+                                <strong>Order Confirmed</strong>
+                                <p style="font-size: 0.875rem; color: var(--text-muted);">We've received your order and it's being prepared</p>
+                            </div>
+                        </li>
+                        <li style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <span style="background-color: var(--border); color: var(--text-muted); width: 2rem; height: 2rem; border-radius: 9999px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</span>
+                            <div style="text-align: left;">
+                                <strong>In Transit</strong>
+                                <p style="font-size: 0.875rem; color: var(--text-muted);">Your order will be dispatched within 24 hours</p>
+                            </div>
+                        </li>
+                        <li style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <span style="background-color: var(--border); color: var(--text-muted); width: 2rem; height: 2rem; border-radius: 9999px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</span>
+                            <div style="text-align: left;">
+                                <strong>Delivered</strong>
+                                <p style="font-size: 0.875rem; color: var(--text-muted);">Receive your order and enjoy your products</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+
+                <!-- Actions -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <a href="index.html" class="btn-primary" style="text-decoration: none; text-align: center;">Continue Shopping</a>
+                    <a href="account.html" class="btn-outline" style="text-decoration: none; text-align: center;">View Orders</a>
+                </div>
+
+                <!-- Support -->
+                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+                    <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 0.75rem;">Need help?</p>
+                    <p style="font-size: 0.875rem;">
+                        📧 <a href="mailto:support@nmedix.com" style="color: var(--primary); text-decoration: none;">support@nmedix.com</a> | 📞 <a href="tel:+234700000000" style="color: var(--primary); text-decoration: none;">+234 700 NMEDIX</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container-custom">
+            <div class="footer-content">
+                <div>
+                    <a href="index.html" class="logo" style="color: white;">
+                        <span style="font-size: 1.5rem;">N-Medix</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 N-Medix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

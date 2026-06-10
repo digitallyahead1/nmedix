@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - N-Medix</title>
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container-custom py-4">
+            <div class="flex items-center justify-between gap-4">
+                <a href="index.html" class="logo">
+                    <img src="img/logo.png" alt="N-Medix" style="height: 3rem;">
+                </a>
+                <a href="cart.html" class="cart-badge" style="text-decoration: none; font-size: 1.25rem;">
+          🛒
+          <span class="cart-count" style="display: none;">0</span>
+        </a>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding: 2rem 0;">
+        <div class="container-custom">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> <span>▸</span>
+                <a href="medicines.html">Medicines</a> <span>▸</span>
+                <span class="current">Product Details</span>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+                <!-- Product Image -->
+                <div style="background-color: var(--surface); border-radius: 0.75rem; padding: 2rem; height: fit-content;">
+                    <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=600&h=600" alt="Product" style="width: 100%; height: auto; border-radius: 0.5rem;">
+                </div>
+
+                <!-- Product Info -->
+                <div>
+                    <span style="color: var(--secondary); font-weight: 600; font-size: 0.875rem;">Pain Relief</span>
+                    <h1 style="font-size: 2rem; font-weight: 700; margin: 0.5rem 0 1rem;">Paracetamol 500mg x20</h1>
+
+                    <!-- Rating -->
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <span style="font-size: 1.25rem;">★★★★★</span>
+                        <span style="color: var(--text-muted);">(128 reviews)</span>
+                    </div>
+
+                    <!-- Price -->
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <span style="font-size: 1.75rem; font-weight: 700; color: var(--primary);">₦1,200</span>
+                        <span style="font-size: 1.125rem; color: var(--text-muted); text-decoration: line-through;">₦1,500</span>
+                        <span style="background-color: #FEE2E2; color: #DC2626; padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-weight: 600; font-size: 0.875rem;">-20%</span>
+                    </div>
+
+                    <!-- Stock -->
+                    <div style="padding: 1rem; background-color: var(--surface); border-radius: 0.5rem; margin-bottom: 1.5rem;">
+                        <p style="font-size: 0.875rem; color: var(--text-muted);">Stock Available: <strong style="color: var(--secondary);">5 units</strong></p>
+                    </div>
+
+                    <!-- Brand & Details -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <p style="margin-bottom: 0.5rem;"><strong>Brand:</strong> Emzor</p>
+                        <p style="margin-bottom: 0.5rem;"><strong>Category:</strong> Pain Relief</p>
+                        <p style="margin-bottom: 0.5rem;"><strong>Quantity:</strong> 20 tablets</p>
+                        <p><strong>Expiry:</strong> 2026-12-31</p>
+                    </div>
+
+                    <!-- Quantity Selector -->
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <label style="font-weight: 600;">Quantity:</label>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; background-color: var(--surface); border-radius: 0.5rem; padding: 0.5rem;">
+                            <button style="background: none; border: none; cursor: pointer; font-size: 1.25rem;">−</button>
+                            <input type="number" value="1" min="1" max="5" style="width: 3rem; text-align: center; border: none; background: none; font-weight: 600;">
+                            <button style="background: none; border: none; cursor: pointer; font-size: 1.25rem;">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+                        <button class="btn-primary" data-add-to-cart="m1" style="width: 100%; cursor: pointer;">Add to Cart</button>
+                        <button class="btn-outline" style="width: 100%; cursor: pointer;">❤️ Add to Wishlist</button>
+                    </div>
+
+                    <!-- Description -->
+                    <div style="border-top: 1px solid var(--border); padding-top: 1.5rem;">
+                        <h3 style="font-weight: 700; margin-bottom: 1rem;">Description</h3>
+                        <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem;">
+                            Paracetamol 500mg is a fast-acting pain reliever and fever reducer. Suitable for headaches, muscle aches, backache, minor arthritis pain, the common cold, toothache, menstrual cramps, and fever.
+                        </p>
+
+                        <h3 style="font-weight: 700; margin: 1.5rem 0 1rem;">Benefits</h3>
+                        <ul style="list-style: none; display: grid; gap: 0.5rem;">
+                            <li>✓ Fast pain relief within 30 minutes</li>
+                            <li>✓ Reduces fever effectively</li>
+                            <li>✓ Gentle on the stomach</li>
+                            <li>✓ Non-drowsy formula</li>
+                            <li>✓ Suitable for adults and children (12+)</li>
+                        </ul>
+
+                        <h3 style="font-weight: 700; margin: 1.5rem 0 1rem;">Directions</h3>
+                        <p style="color: var(--text-muted);">Take 1 tablet with water as needed for pain or fever. Do not exceed 4 tablets in 24 hours.</p>
+
+                        <h3 style="font-weight: 700; margin: 1.5rem 0 1rem;">Warnings</h3>
+                        <p style="color: var(--text-muted);">Do not use if you are allergic to paracetamol. Consult a doctor if pregnant or breastfeeding.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews Section -->
+            <div style="margin-top: 4rem; border-top: 2px solid var(--border); padding-top: 2rem;">
+                <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem;">Customer Reviews</h2>
+                <div style="display: grid; gap: 1.5rem;">
+                    <div style="background-color: var(--surface); padding: 1.5rem; border-radius: 0.75rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                            <strong>John Doe</strong>
+                            <span style="font-size: 0.875rem; color: var(--text-muted);">Oct 20, 2024</span>
+                        </div>
+                        <p style="color: var(--text-muted); margin-bottom: 0.5rem;">★★★★★</p>
+                        <p>Great product! Works quickly and effectively. Highly recommended for headaches.</p>
+                    </div>
+
+                    <div style="background-color: var(--surface); padding: 1.5rem; border-radius: 0.75rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                            <strong>Jane Smith</strong>
+                            <span style="font-size: 0.875rem; color: var(--text-muted);">Oct 18, 2024</span>
+                        </div>
+                        <p style="color: var(--text-muted); margin-bottom: 0.5rem;">★★★★☆</p>
+                        <p>Good quality. Delivery was fast. Will order again.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div style="margin-top: 4rem;">
+                <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem;">Related Products</h2>
+                <div class="products-grid">
+                    <div class="card product-card" data-product-card>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&q=80&w=400&h=400" alt="Product">
+                            <button class="product-wishlist">🤍</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Malaria</span>
+                            <a href="medicine-detail.html?id=m3" class="product-name" style="text-decoration: none;">Artemether Lumefantrine</a>
+                            <p style="font-weight: 600; color: var(--primary); margin: 0.5rem 0;">₦2,500</p>
+                            <button class="btn-primary" data-add-to-cart="m3" style="width: 100%; font-size: 0.875rem;">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="card product-card" data-product-card>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1550572017-edd951aa8f72?auto=format&fit=crop&q=80&w=400&h=400" alt="Product">
+                            <button class="product-wishlist">🤍</button>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Vitamins</span>
+                            <a href="medicine-detail.html?id=m2" class="product-name" style="text-decoration: none;">Vitamin C 1000mg</a>
+                            <p style="font-weight: 600; color: var(--primary); margin: 0.5rem 0;">₦2,800</p>
+                            <button class="btn-primary" data-add-to-cart="m2" style="width: 100%; font-size: 0.875rem;">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container-custom">
+            <div class="footer-content">
+                <div>
+                    <a href="index.html" class="logo" style="color: white;">N-Medix</a>
+                    <p>Your Health. Our Priority.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 N-Medix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
